@@ -6,7 +6,7 @@ import com.github.zipcodewilmington.sample.MyLinkedList;
  * @version 1.0.0
  * @date 10/21/19 9:05 AM
  */
-public class DashaMap1<E,T> implements HashMapX {
+public class DashaMap1 implements HashMapX {
     MyLinkedList[] list;
 
 
@@ -20,6 +20,10 @@ public class DashaMap1<E,T> implements HashMapX {
 
     @Override
     public void set(String key, Integer value) {
+        String hashFunctionOne = HashFunctionOne(key);
+        int index = hashFunctionOne.charAt(0)-97;
+
+        this.list[index].addNode(key, Integer.parseInt(String.valueOf(value)));
 
     }
 
@@ -35,6 +39,9 @@ public class DashaMap1<E,T> implements HashMapX {
 
     @Override
     public boolean isEmpty() {
+        if (size() == 0){
+            return true;
+        }
         return false;
     }
 

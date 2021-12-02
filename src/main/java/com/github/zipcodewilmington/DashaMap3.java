@@ -1,6 +1,6 @@
 package com.github.zipcodewilmington;
 
-public class DashaMap3<E,T> implements HashMapX{
+public class DashaMap3 implements HashMapX{
 
     private String HashFunctionThree(String input) {
         if (input.length() > 1) {
